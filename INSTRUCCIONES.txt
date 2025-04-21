@@ -5,6 +5,8 @@ cmd 2 ingresar comando "npm run dev" (inicia el codigo en modo desarrollador, es
 
 Recomendación: Utilizar vista de desarrollador en el navegador para visualizar el flujo de datos en la consola
 
+La estructura de los codigos de ticket es 000 1234567 00000000000000 01, para la operación cargar camión se debe ingresar un codigo valido para el calculo de pallets totales, si se ejecuta el lectorCSV.js en el output de Visual Studio Code obtendra codigos validos del archivo csv adjunto.
+
 RUTAS PARA TESTEO ---------------------------------------------------------------------------------------------
 Recomiendo utilizar el menu de opciones de desarrollo ubicado en el FOOTER
 Tambien se pueden ingresar las rutas en la barra de busqueda de cualquier navegador, luego de haber inicializado la app y mongod (cmd 1 y cmd 2):  
