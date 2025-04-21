@@ -1,0 +1,45 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Coke Kronos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/olvido.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+
+<!-- Contenedor principal para la sección de recuperación de contraseña -->
+<div class="olvido-container">
+    <h1>COKE-KRONOS</h1>
+
+    <!-- Mensaje informativo sobre la recuperación de contraseña -->
+    <p>Para recuperar tu contraseña, contacta con la mesa de ayuda.</p>
+
+    <!-- Botón para mostrar/ocultar información de contacto -->
+    <button class="contact-btn" onclick="toggleContactos()">Contactar con Mesa de Ayuda</button>
+
+    <!-- Lista de opciones de contacto (inicialmente oculta) -->
+    <ul id="contactos" class="contact-list">
+        <li><strong>Mesa de Ayuda Chile:</strong> 1999</li>
+        <li><strong>Llamadas fuera de la Red Andina:</strong> 800-914524</li>
+        <li><strong>Correo:</strong> <a href="mailto:mesadeayuda@koandina.com">mesadeayuda@koandina.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/573244500272" target="_blank">+57 324 4500272</a></li>
+    </ul>
+
+    <!-- Enlace para volver a la pantalla de inicio de sesión -->
+    <p><a href="/" class="back-link">Volver al Login</a></p>
+</div>
+
+<!-- Script para mostrar u ocultar la lista de contactos -->
+<script>
+    function toggleContactos() {
+        const contactos = document.getElementById("contactos");
+        if (contactos.style.maxHeight) {
+            contactos.style.maxHeight = null;
+        } else {
+            contactos.style.maxHeight = contactos.scrollHeight + "px";
+        }
+    }
+</script>
+

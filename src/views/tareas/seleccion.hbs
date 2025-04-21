@@ -1,0 +1,58 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Tarea - Coke Kronos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/selecciontarea.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+
+
+</head>
+
+<body>
+    
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal para la selección de tarea -->
+<div class="task-container">
+    <h2>Seleccionar Tarea</h2>
+    
+
+    <!-- Botones para seleccionar diferentes tareas -->
+    <button class="task-btn" data-task="cargar-camion">Cargar Camión</button>
+    <button class="task-btn" data-task="retirar-pallet">Retirar Pallet a Bahía de Carga</button>
+    <button class="task-btn" data-task="cambio-entre-bahías">Cambio entre Bahías de Carga</button>
+    
+    <!-- Se define un elemento p con un id 'usuarioActual' -->
+    <p id="usuarioActual"></p>
+
+    <!-- Botón para cerrar sesión -->
+    <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+</div>
+
+<!-- Enlace al script de manejo de selección de tarea -->
+<script src="/javascript/seleccion.js"></script>
+
+</body>

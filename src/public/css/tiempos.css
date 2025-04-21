@@ -1,0 +1,195 @@
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --gris-claro: #ddd;
+    --gris-medio: #bbb;
+    --negro: #000;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    background: var(--fondo-celeste);
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 240px;
+    background: var(--celeste-oscuro);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 2px solid var(--negro);
+    height: 100vh;
+  }
+  
+  .sidebar h2 {
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .sidebar button {
+    padding: 10px;
+    margin: 6px 0;
+    background: var(--blanco);
+    color: var(--celeste-oscuro);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 2px solid var(--celeste-oscuro);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .sidebar button:hover {
+    background: var(--celeste-claro);
+  }
+  
+  .logout-btn {
+    margin-top: 20px;
+  }
+  
+  /* Contenido principal */
+  .content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    background: var(--blanco);
+    overflow-y: auto;
+  }
+  
+  /* Encabezado */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    width: 100%;
+    color: var(--celeste-oscuro);
+  }
+  
+  .header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .fecha {
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  /* Títulos centrales */
+  .titulo-central {
+    text-align: center;
+    font-size: 22px;
+    color: var(--celeste-oscuro);
+    margin: 20px 0 10px;
+  }
+  
+  /* Tablas de tareas */
+  .tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px var(--sombra-cuadro);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .tasks-table th {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .tasks-table td {
+    background: #d7f3f1;
+    color: var(--negro);
+    padding: 10px;
+    border-top: 1px solid var(--blanco);
+  }
+  
+  .tasks-table tr:nth-child(even) td {
+    background: #c7ece9;
+  }
+  
+  /* Secciones de resumen */
+  .section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--fondo-celeste);
+    border: 1px solid var(--gris-claro);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px var(--sombra-cuadro);
+  }
+  
+  /* Tablas resumen */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px var(--sombra-cuadro);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .summary-table th {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .summary-table td {
+    background: #e0f7fa;
+    padding: 10px;
+    color: var(--negro);
+    vertical-align: top;
+    border-top: 1px solid var(--blanco);
+  }
+  
+  /* Subtítulos dentro de secciones */
+  .section h2 {
+    font-size: 20px;
+    color: var(--celeste-oscuro);
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--celeste-claro);
+    padding-bottom: 5px;
+  }
+  
+  /* Listas en celdas */
+  .summary-table td ul,
+  .summary-table td li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  

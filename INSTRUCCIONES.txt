@@ -1,0 +1,76 @@
+- - - - - - - - - -INSTRUCTIVO PARA TESTEAR FUNCIONALIDADES- - - - - - - - - -
+Recordar tener MongoDB y NodeJS instalado, para iniciar la app se necesitan dos consolas cmd (recomiendo abrirlas en VS Code)
+cmd 1 ingresar comando "mongod" (Inicializa MongoDB)
+cmd 2 ingresar comando "npm run dev" (inicia el codigo en modo desarrollador, esto ayuda a notiificar cada cambio realizado en la consola)
+
+Recomendación: Utilizar vista de desarrollador en el navegador para visualizar el flujo de datos en la consola
+
+RUTAS PARA TESTEO ---------------------------------------------------------------------------------------------
+Recomiendo utilizar el menu de opciones de desarrollo ubicado en el FOOTER
+Tambien se pueden ingresar las rutas en la barra de busqueda de cualquier navegador, luego de haber inicializado la app y mongod (cmd 1 y cmd 2):  
+- Registrar Usuario : http://localhost:4000/users/signup
+- Iniciar Sesión : http://localhost:4000/users/signin     (Luego de iniciar sesion va a la pestaña tareass donde aparecen los codigos escaneados, si no aparece nada desde el menu de desarrollo se puede ir a la pestaña para agregar un codigo)
+
+COMANDOS BASE DE DATOS
+Para esto se debe tener instalado MongoDb Shell.
+Ademas se debe iniciar en una tercera consola cmd:
+cmd 3 ingresar comando "mongosh"
+luego de iniciar mongosh se deben utilizar los siguientes comandos en orden para ver las tareas creadas en la consola:
+
+- show dbs : Mostrar bases de datos
+- use nombre_de_la_base_de_datos_a_acceder : Seleccionar base de datos
+- show collections : Mostrar colecciones
+- db.nombre_colección_que_se_quiere_revisar.find() : Buscar/Mostrar elementos de la colección indicada
+- db.nombre_colección_que_se_quiere_revisar.find().pretty() : Buscar/Mostrar elementos de la colección indicada de manera ordenada
+
+Por defecto deberian ser los siguientes comandos:
+- show dbs
+- use coke_KRONOS
+- show collections
+- db.tareas.find()
+- db.tareas.find().pretty()
+
+REINICIAR PUERTO
+Desde power Shell:
+- netstat -ano | findstr :4000
+Esto te mostrará algo como:
+TCP    127.0.0.1:4000    0.0.0.0:0    LISTENING    12345
+
+El último número es el PID del proceso que está usando el puerto. 
+- Para cerrarlo, ejecuta:
+taskkill /PID 12345 /F
+(Sustituya el 12345 por el PID real que aparezca en su caso).
+
+Una alternativa es usar:
+- npx kill-port 4000 (al tener nodejs se puede usar ese comando)
+
+
+
+COMANDO PARA EXTRAER ATRIBUTOS DE LA TAREA ACRTUAL -------------------------------------------------------------
+let tareaActual = JSON.parse(localStorage.getItem("tareaActual")) || [];
+
+console.log("Tareas almacenadas:", tareaActual);
+
+if (Array.isArray(tareaActual) && tareaActual.length > 0) {
+    let ultimaTarea = tareaActual[tareaActual.length - 1];
+    console.log("Última tarea registrada:", ultimaTarea);
+} else {
+    console.log("No hay tareas registradas en localStorage.");
+}
+
+COMANDO PARA VISUALIZAR TRANSPORTES ---------------------------------------------------------------------------
+
+let transportes = JSON.parse(localStorage.getItem("transportes")) || {};
+
+console.log("Transportes almacenados:", transportes);
+
+// Convertir el objeto en un array de valores (arrays de pallets)
+let transportesArray = Object.values(transportes);
+
+if (transportesArray.length > 0) {
+    let ultimoTransporte = transportesArray[transportesArray.length - 1]; // Último array de pallets
+    console.log("Último transporte registrado:", ultimoTransporte);
+} else {
+    console.log("No hay transportes registrados en localStorage.");
+}
+

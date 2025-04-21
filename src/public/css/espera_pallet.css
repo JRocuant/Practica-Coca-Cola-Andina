@@ -1,0 +1,123 @@
+/*Se definen variables CSS para facilitar la gestión de colores y reutilizarlos en todo el archivo*/
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+}
+
+/*Estilos generales*/
+body {
+    background: var(--fondo-celeste);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*Estilo del contenedor principal*/
+.container {
+    background: var(--blanco);
+    padding: 30px;
+    max-width: 300px; /*CAMBIO AQUÍ*/
+    width: 80%; /*CAMBIO AQUÍ*/
+    border-radius: 15px;
+    box-shadow: 0 6px 12px var(--sombra-cuadro);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Estilo del título h1 y del texto en general*/
+h1 {
+    color: var(--celeste-oscuro);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: var(--celeste-oscuro);
+    margin-bottom: 20px;
+}
+
+/*Estilo del botón terminar tarea*/
+button {
+    background: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: var(--blanco);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 250px;
+}
+
+button:hover {
+    background-color: #004d40;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/*Estilos de los enlaces al presionar "cancelar"*/
+a {
+    color: var(--celeste-oscuro);
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 15px;
+    display: block;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--celeste-claro);
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: block;
+}
+/*HASTA ACÁ*/

@@ -1,0 +1,86 @@
+<head>
+  <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta charset="UTF-8" />
+  <!-- Establece que el sitio se escale correctamente en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título de la página que aparece en la pestaña del navegador -->
+  <title>Dashboard - Coke Kronos</title>
+  <!-- Enlace al archivo CSS específico para esta vista de cambio entre bahías -->
+  <link rel="stylesheet" href="/css/cambioentrebahiasadm.css" />
+  <!-- Enlace al archivo CSS para estilos comunes del pie de página -->
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <!-- Contenedor de la barra lateral -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <!-- Botones para navegar a diferentes secciones del panel de administración -->
+    <button onclick="window.location.href='/admin/usuarios'">Usuarios</button>
+    <button onclick="window.location.href='/admin/transportes'">Transportes</button>
+    <button onclick="window.location.href='/admin/cargarCamionAdmin'">Cargar Camión</button>
+    <button onclick="window.location.href='/admin/retirarPalletAdmin'">Retiro de Pallet</button>
+    <button onclick="window.location.href='/admin/inicio'">Inicio</button>
+    <button onclick="window.location.href='/admin/tiempos'">Tiempos</button>
+    <!-- Botón para cerrar sesión del usuario -->
+    <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+  </div>
+
+  <!-- Contenido principal del dashboard -->
+  <div class="content">
+    <div class="header">
+      <!-- Título de la sección actual -->
+      <h1>Lista de los Cambios entre Bahías</h1>
+      <!-- Fecha y hora de referencia (estático en este caso) -->
+      <div class="fecha">
+        <strong>Miércoles 2 de abril de 2025</strong><br />
+        16:00 hrs
+      </div>
+    </div>
+
+    <!-- Tabla con los registros de cambios de bahías -->
+    <table class="tasks-table">
+      <tr>
+        <!-- Encabezados de la tabla -->
+        <th>Usuario</th>
+        <th>Tarea</th>
+        <th>Tiempo ejecución</th>
+        <th>Turno</th>
+        <th>Fecha</th>
+        <th>Bahía Inicial</th>
+        <th>Bahía Final</th>
+        <th>Código Ticket del Pallet Cambiado</th>
+      </tr>
+      <!-- Itera sobre los registros usando Handlebars -->
+      {{#each registros}}
+      <tr>
+        <!-- Muestra cada campo del registro -->
+        <td>{{nombreUsuario}}</td>
+        <td>{{codigoTarea}}</td>
+        <td>{{duracion}}</td>
+        <td>{{turno}}</td>
+        <td>{{formatDate operacionInicio}}</td>
+        <td>{{bahiaInicial}}</td>
+        <td>{{bahiaFinal}}</td>
+        <td>{{palletCambiado}}</td>
+      </tr>
+      {{/each}}
+    </table>
+    <br>
+
+    <!-- Script para cerrar sesión -->
+    <script>
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+          logoutBtn.addEventListener('click', () => {
+              // Limpia los datos de sesión y almacenamiento local
+              sessionStorage.clear();
+              localStorage.clear();
+              localStorage.removeItem('tareaActual');
+
+              // Redirige al usuario al inicio (login)
+              window.location.href = '/';
+          });
+      }
+    </script>
+
+</body>

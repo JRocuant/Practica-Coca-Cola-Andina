@@ -1,0 +1,164 @@
+/*Se definen variables CSS para facilitar la gestión de colores y reutilizarlos en todo el archivo*/
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+}
+
+/*Estilos generales*/
+body {
+    background: var(--fondo-celeste);
+    color: var(--celeste-oscuro);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/*Estilos del contenedor del login*/
+.login-container {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--sombra-cuadro);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Estilos del título h1*/
+.login-container h1 {
+    color: var(--celeste-claro);
+    margin-bottom: 30px;
+    font-size: 40px; /*CAMBIO AQUÍ*/
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*Campos de entrada*/
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+}
+
+/*Estilos de los inputs*/
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--celeste-claro);
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+    margin-top: 20px; /*NUEVO*/
+}
+
+/*Efecto de foco en los inputs*/
+.input-group input:focus {
+    border-color: var(--celeste-oscuro);
+    box-shadow: 0 0 8px rgba(0, 121, 107, 0.4);
+}
+
+/*Botón de ingreso*/
+.btn-primary{
+    background-color: var(--celeste-oscuro); /*cambio aquí*/
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%; /*CAMBIO AQUÍ*/
+    margin-top: 20px;
+}
+
+/*Efectos Hover y Active en el Botón*/
+.btn-primary:hover {
+    background-color: var(--celeste-claro); /*CAMBIO AQUÍ*/
+    transform: scale(1.02);
+}
+
+.btn-primary btn-block:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*Enlace de Olvido de Contraseña*/
+.forgot-password {
+    color: var(--celeste-oscuro);
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.forgot-password:hover {
+    color: var(--celeste-claro);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 300px;
+        padding: 30px;
+    }
+
+    .login-container h1 {
+        font-size: 28px;
+    }
+
+    .login-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .login-container h1 {
+        font-size: 24px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+    }
+
+    .forgot-password {
+        font-size: 12px;
+    }
+}
+
+/*Mensajes de error*/
+.error-message {
+    color: #e53935;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 2px;
+    text-align: center;
+    display: none;
+    padding-left: 10px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,185 @@
+Este archivo documenta el progreso semana a semana del desarrollo de la aplicación web coke-KRONOS
+Las tareas aqui descritas fueron realizadas por José Rocuant Rodríguez estudiante en practica de la 
+Universidad de O'Higgins encargado del desarrollo en backend, conexión con la base de datos y pruebas en terreno.
+
+(Se contemplan los avances desde el lunes 24 de febrero hasta el viernes 11 de abril, 
+aunque el proyecto sigue en desarrollo y la practica laboral ha sido extendida hasta el 5 de mayo)
+
+- - - - - - - - -TRABAJO REALIZADO (semana 07 --- 07 de Abril) - - - - - - - - - -
+ MÓDULO ADMINISTRACIÓN
+- Conexión con base de datos de:
+    - Vista CargarCamionAdmin
+    - Vista CambioEntreBahiasAdmin
+    - Vista RetirarPalletAdmin
+
+USUARIO
+- Redireccionamiento según Rol de usuario implementado
+
+
+ - - - - - - - - -TRABAJO REALIZADO (semana 06 --- 31 de Marzo) - - - - - - - - - -
+ MÓDULO ADMINISTRACIÓN
+- Establecer Rutas modulo Administración
+- Establecer Controladores modulo Administración
+- Establecer Vistas modulo Administración
+- Funcionalidad de redireccion según rol usando passport
+
+USUARIO
+- Corrección error login vista de signin en index, no validaba correctamente
+
+TAREAS
+- Corrección error almacenamiento hora en operacionInicio
+- Corrección calculo de turno segun horario.
+- Corrección Tipo de dato atributo transporte Schema cambioBahía base de datos.
+
+
+ - - - - - - - - -TRABAJO REALIZADO (semana 05 --- 24 de Marzo) - - - - - - - - - -
+ - TESTEOS EN TERRENO
+
+- USUARIO
+        - id stingingfy en user schema
+        
+- LEER REPORTE PICKING
+        - Leer archivo en formatoCSV
+        - Parsear Transporte y pallets desde código de Ticket
+        - Aplicarlo en función cargarCamion
+        - Aplicar valor de "pallet Maximo" al hbs antes del evento del boton
+
+- TAREAS
+    - Calcular hora y aplicar zona horaria de Chile
+    - Calcular turno a partir de la fecha inicial 
+    - Ajustes en modelos/schemas, fetch y controladores
+
+- OTROS AVANCES
+    - Quitar restricción código ticket único
+
+
+- - - - - - - - - -TRABAJO REALIZADO (semana 04 --- 17 de Marzo) - - - - - - - - - -
+- REALIZAR CONEXIÓN CON BASE DE DATOS 
+    - Establecer base de datos en la nube (Cluste MongoDB ATLAS 512 mb) para futuro despliegue
+
+- VERIFICACIÓN DE TAREAS 
+    - CAMBIO BAHIA
+        - cambiarBahia()
+            - Iniciar Tarea
+            - Escanear bahía de carga inicial
+            - Escanear Pallet
+            --- cambiar pallet de bahía de carga ---
+            - Escanear pallet cambiado
+            - Escanear bahía de carga final
+            - Terminar Tarea
+
+- OBTENCIÓN DE DATOS
+    - PARSEAR CODIGO DE TICKET
+        - Obtener transporte
+
+    - USUARIO
+        - Obtener nombre
+        - obtener email
+        - obtener id
+
+        - OPERADOR
+            - Mostrar nombre de usuario en la interfaz
+
+    - TAREA
+        - Obtener Tiempo inicio de Tarea 
+        - Obtener Tiempo fin de Tarea
+        - Obtener turno
+        - Calcular duracion()
+
+        - DATOS TAREA RETIRAR PALLET
+            - Obtener codigoTarea
+            - Obtener bahiaCarga
+            - Obtener codigoTicket
+
+        - DATOS TAREA CARGAR CAMION
+            - Obtener codigoTarea
+            - Obtener codigoTicket
+            - Obtener codigoTicketCargas[]
+        
+        - DATOS TAREA CAMBIO BAHIA
+            - Obtener codigoTarea
+            - Obtener bahiaInicio
+            - Obtener bahiaFinal
+
+- OTROS AVANCES
+    - Vinculación Usuario tarea
+    - Actualización modelos base de datos (Incluyendo ID del Usuario)
+    - códigos que sean únicos en ticket
+
+
+- - - - - - - - - -TRABAJO REALIZADO (semana 03 --- 10 de Marzo) - - - - - - - - - -
+- OTROS AVANCES
+    - Conexión vistas:
+        - Operación Cargar Camion
+        - Operación Cambio de bahia
+        - Operación Retirar Pallet
+    - Creación de nuevos controladores
+    - Creacion de Nuevas Rutas
+    - Solucion de errores Rutas estilos CSS
+    - Conexion login con base de datos
+    - Implmentación de local storage al construir tareas
+
+- - - - - - - - - -TRABAJO REALIZADO (semana 02 - 3 de Marzo) - - - - - - - - - -
+- VERIFICACIÓN DE TAREAS
+    - RETIRAR PALLET
+        - retirarPallet()
+            - Iniciar Tarea
+            - Escanear Pallet
+            --- llevar a bahia de carga ---
+            - Escanear Bahía
+            - Terminar Tarea
+
+    - CARGAR CAMION
+        - cargarCamion()
+            -- Iniciar Tarea
+            - Escanear Pallet
+            --- cargar camion ---
+            - Escanear pallets cargados (Loop)
+            - Terminar Tarea
+
+- OBTENCIÓN DE DATOS 
+    - Obtener Código de Ticket (idTarea) y guardarlo en la base de datos con el modelo/Schema 
+    de la Tarea seleccionada
+    
+    - USUARIO
+        - Obtener id
+        - Obtener name
+        - Obtener email
+        - Obtener password
+
+- MANEJO DE TAREAS
+    - Función para eliminar tareas guardadas en la base de datos
+    - Función para Editar tareas guardadas en la base de datos
+
+- OTROS AVANCES
+    - Establecer rutas de las interconexiones al realizar una tarea
+    - Establecer Controladores de las rutas
+    - Editar Schemas/Modelos
+    - Establecer bases para rutas y controladores para registro de usuario e inicio de sesión
+    - Establecer bases interfaz para registro de usuario e inicio de sesión
+
+
+- - - - - - - - - -TRABAJO REALIZADO (semana 01 --- 24 de Febrero) - - - - - - - - - -
+-RESTRUCTURACION BASE DE LA APLICACIÓN
+    - Borrar templates y codigo innecesario (REALIZADO)
+    - Establecer Esquemas/Modulos para MongoDB (REALIZADO)
+    - Establecer base para HTML (Manejado con Handlebars .hbs) modular (REALIZADO)
+
+- REALIZAR FUSIÓN FRONTEND & BACKEND
+    - Pull desde FRONTEND (REALIZADO)
+    - Modularizar usando Handelbars (.hbs) (REALIZADO)
+    - Corregir y ajustar (REALIZADO)
+    
+- REARMAR ESTRUCTURA DE LA APLICACIÓN
+    - Redefinir basado en el proyecto los siguientes aspectos:(REALIZADO)
+        - Funciones (REALIZADO)
+        - Rutas (REALIZADO)
+        - Base de datos (Modulos/Schemas) (REALIZADO)
+        - Vistas (REALIZADO)
+        - Controladores (REALIZADO)
+
+<!--  INFORMACIÓN SOBRE LOS TURNOS  -->
+<!--    07:00 a 14:30 mañana 801    -->
+<!--    14:30 a 23:00 tarde 802     -->
+<!--    23:00 a 07:00 noche 803     -->
+

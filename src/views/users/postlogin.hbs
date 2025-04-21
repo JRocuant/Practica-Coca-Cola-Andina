@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo...</title>
+</head>
+
+<body>
+    <!-- paso intermedio entre login y vistas según el rol -->
+    <script>
+        // Guardamos en Local Storage
+        const usuarioActual = {
+            name: "{{name}}",
+            email: "{{email}}",
+            id: "{{id}}", // Aquí agregamos el ObjectId
+            rol: "{{rol}}"
+            
+        };
+        localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
+
+        // Guardamos transportes y palletMaximo en Local Storage
+        const transportes = {{{transportes}}}; // Se usa triple mustache para parsear JSON correctamente
+        const palletMaximo = {{{palletMaximo}}};
+
+        localStorage.setItem('transportes', JSON.stringify(transportes));
+        localStorage.setItem('palletMaximo', JSON.stringify(palletMaximo));
+
+        const rol = usuarioActual.rol;
+        // Redirigimos
+        if (rol === "administrador" || rol === "jefeDeTurno") {
+            window.location.href = "/admin/inicio";
+        } else if (rol === "operador") {
+            window.location.href = "/tareas/seleccion";
+        } else {
+            window.location.href = "/"; 
+        }
+
+    </script>
+</body>

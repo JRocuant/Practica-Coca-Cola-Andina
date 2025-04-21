@@ -1,0 +1,59 @@
+<head>
+    <title>Carga de Camión</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/espera_carga_camion.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+    
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal de la interfaz -->
+<div class="container">
+    <h1>Escanear Pallets para Cargar</h1>
+    <p>Escanee cada pallet antes de completar la carga.</p><!-- Instrucción para el usuario -->
+
+    <!-- Contador de pallets -->
+    <p id="contadorPallets">Pallets: 0/<span id="maxPalletValueDisplay"></span></p>
+
+
+    <!-- Campo de entrada para escanear códigos de pallets -->
+    <input type="text" id="palletCode" placeholder="Escanea un pallet..." autofocus>
+
+    <!-- Botón para agregar un pallet a la lista -->
+    <button onclick="agregarPallet()">Agregar Pallet</button>
+
+    <!-- Lista donde se mostrarán los pallets escaneados -->
+    <ul id="palletList"></ul>
+
+    <!-- Botón para finalizar la tarea, inicialmente deshabilitado -->
+    <button id="terminarTarea" disabled>Terminar Tarea</button>
+
+    <!-- Se define un elemento p con un id 'usuarioActual' -->
+    <p id="usuarioActual"></p>
+
+    <!-- Enlace para cancelar la operación y volver a la pantalla de espera -->
+    <a href="/tareas/espera">Cancelar</a>
+</div>
+
+<!-- Script que maneja la funcionalidad de escaneo y registro de pallets -->
+<script src="/javascript/esperaCargaCamion.js"></script>

@@ -1,0 +1,105 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Coke Kronos</title>
+  <link rel="stylesheet" href="/css/usuarios.css"/>
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <button onclick="window.location.href='/admin/inicio'">Inicio</button>
+    <button onclick="window.location.href='/admin/transportes'">Transportes</button>
+    <button onclick="window.location.href='/admin/cargarCamionAdmin'">Cargar Camión</button>
+    <button onclick="window.location.href='/admin/retirarPalletAdmin'">Retiro de Pallet</button>
+    <button onclick="window.location.href='/admin/cambioEntreBahiasAdmin'">Cambio entre Bahías</button>
+    <button onclick="window.location.href='/admin/tiempos'">Tiempos</button>
+    <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h1>Lista de Usuarios</h1>
+      <div class="fecha">
+        <strong>Miércoles 2 de abril de 2025</strong><br />
+        16:00 hrs
+      </div>
+    </div>
+
+    <label for="turno-select" class="label-destacado">Selecciona un turno</label>
+    <select id="turno-select" class="selector">
+      <option>Mañana</option>
+      <option>Tarde</option>
+      <option>Noche</option>
+    </select>
+
+    <table class="tasks-table">
+      <tr>
+        <th>Usuario</th>
+        <th>Actividades Realizadas</th>
+        <th>Turno</th>
+        <th>Tiempo total de las actividades realizadas</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+      </tr>
+      <tr>
+        <td>• Juan Sandoval</td>
+        <td>
+          • Cargar Camión (10)<br>
+          • Cambio entre bahías (5)<br>
+          • Retirar Pallet (10)
+        </td>
+        <td>• Mañana</td>
+        <td>• 07:30:23</td>
+        <td>• 2025-04-01</td>
+        <td>• Conectado</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <label for="tarea-select" class="label-destacado">Selecciona una tarea</label>
+    <select id="tarea-select" class="selector">
+      <option>Cargar Camión</option>
+      <option>Cambio entre bahías</option>
+      <option>Retirar Pallet</option>
+    </select>
+
+    <table class="tasks-table">
+      <tr>
+        <th>Usuario</th>
+        <th>Actividad</th>
+        <th>Turno</th>
+        <th>Tiempo total</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+      </tr>
+      <tr>
+        <td>• Juan Sandoval</td>
+        <td>• Cargar Camión</td>
+        <td>• Mañana</td>
+        <td>• 03:24:27</td>
+        <td>• 2025-04-01</td>
+        <td>• Conectado</td>
+      </tr>
+    </table>
+  </div>
+
+<script>
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+          // Limpia sessionStorage y localStorage al cerrar sesión
+          sessionStorage.clear();
+          localStorage.clear();
+          localStorage.removeItem('tareaActual');
+
+          // Redirige al usuario a la página de inicio de sesión
+          window.location.href = '/';
+      }); // <-- ESTA ES LA LLAVE QUE FALTABA
+  }
+</script>
+
+</body>
+</html>

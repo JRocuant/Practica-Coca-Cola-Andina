@@ -1,0 +1,7 @@
+
+# pixi environments
+.pixi
+*.egg-info
+node_modules/*
+package-lock.json
+pixi.*

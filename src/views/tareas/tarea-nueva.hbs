@@ -1,0 +1,44 @@
+<!-- Contenedor Principal de Esperando Escaneo -->
+<head>
+    <link rel="stylesheet" href="/css/espera.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<div class="scan-waiting-container">
+    <h2>Esperando Escaneo...</h2>
+
+    <!-- Mostrar la tarea seleccionada -->
+    <p class="selected-task" id="selectedTask">Tarea seleccionada: </p>
+
+    <!-- Animación de Carga -->
+    <div class="loader"></div>
+
+    <!-- Mensaje de Espera -->
+    <p class="waiting-message">Por favor, escanea el código para continuar.</p>
+
+    <!-- Formulario para ingresar código manualmente -->
+    <form action="/tareas/tarea-nueva" method="POST">
+        <input type="text" name="idTarea" placeholder="Ingrese código" required>
+        <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+
+    <!-- Botón de Cancelar (Opcional) -->
+    <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+</div>
+
+<script src="javascript/espera.js"></script>

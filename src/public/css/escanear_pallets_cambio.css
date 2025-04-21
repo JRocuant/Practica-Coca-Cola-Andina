@@ -1,0 +1,96 @@
+/* Estilo del contenedor principal */
+.container {
+    background: var(--blanco);
+    padding: 20px; /*CAMBIO AQUÍ*/
+    max-width: 300px; /*CAMBIO AQUÍ*/
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--sombra-cuadro);
+    text-align: center;
+}
+
+/* Estilo de los títulos h1, h2 y el párrafo p */
+h1, h2 {
+    color: var(--celeste-oscuro);
+    font-size: 20px; /* Más pequeño */
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 13px; /* Reducido */
+    color: var(--celeste-oscuro);
+    margin: 5px 0;
+}
+
+/* Estilo de los campos de entrada */
+input {
+    box-sizing: border-box;
+    width: 85%; /* Más compacto */
+    padding: 7px; /* Más pequeño */
+    border: 1px solid var(--celeste-claro);
+    border-radius: 5px;
+    margin: 4px 0; /* Menos espacio */
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Estilo de los botones */
+button {
+    background: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 4px 0;
+    width: 85%; /* Más compacto */
+    font-size: 13px; /* Más pequeño */
+}
+
+button:hover {
+    background: var(--celeste-claro);
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* Estilo del enlace "volver" */
+a {
+    display: block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: var(--celeste-oscuro);
+    font-size: 13px;
+}
+
+a:hover {
+    color: var(--celeste-claro);
+}
+
+/* Estilos del mensaje de confirmación */
+#mensaje {
+    font-size: 15px; /*CAMBIO AQUÍ*/
+    font-weight: bold;
+    margin-top: 8px;
+    color: green;
+}
+
+/*NUEVO*/
+#mensaje2 {
+    font-size: 15px; /*CAMBIO AQUÍ*/
+    font-weight: bold;
+    margin-top: 8px;
+    color: green;
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+/*HASTA ACÁ*/

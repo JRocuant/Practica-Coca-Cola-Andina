@@ -1,0 +1,69 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escanear Pallets y Bahía de Destino</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/escanear_pallets_cambio.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+    
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal de la pantalla -->
+<div class="container">
+    <h1>Confirmar Cambios</h1>
+
+    <!-- Campo de entrada para escanear el código de un pallet -->
+    <input type="text" id="palletCode" placeholder="Pallet cambiado..." autofocus>
+
+    <!-- Botón para agregar el pallet escaneado a la lista -->
+    <button id="agregarPallet">Confirmar Pallet</button>
+
+    <!-- Lista donde se mostrarán los pallets escaneados -->
+    <ul id="palletList"></ul>
+
+    <!-- NUEVO -->
+    <p id="mensaje2"></p>
+
+    <h2>Escanear Bahía Destino</h2><!-- Subtítulo indicando la acción a realizar -->
+
+    <!-- Campo de entrada para escanear el código de la bahía destino -->
+    <input type="text" id="bahiaDestinoCode" placeholder="Escanea la bahía destino..." >
+
+    <!-- Botón de confirmación deshabilitado inicialmente -->
+    <button id="confirmarBtn" disabled>Confirmar</button>
+
+    <!-- Se define un elemento p con un id 'usuarioActual' -->
+    <p id="usuarioActual"></p>
+
+    <!-- Mensaje de validación, confirmación o error -->
+    <!-- CAMBIO AQUÍ -->
+    <p id="mensaje"></p>
+
+    <!-- Enlace para regresar a la pantalla de espera -->
+    <a href="/tareas/espera">Volver</a>
+</div>
+
+<!-- Script que maneja la lógica de escaneo de pallets y bahía -->
+<script src="/javascript/escanearPalletsCambio.js"></script>

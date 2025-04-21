@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperando Acción</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/espera_cambio_bahia.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+    
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal de la pantalla de espera de acción -->
+<div class="container">
+    <h1>Esperando Acción</h1>
+
+    <p>Escanee la bahía de inicio.</p>
+    <!-- Input para escanear la bahía de inicio (inicialmente deshabilitado) -->
+    <input type="text" id="bahiaInput" placeholder="Escanear bahía" autofocus>
+
+    <!-- Botón para continuar, inicialmente deshabilitado -->
+    <button id="continuarBtn">Continuar</button>
+
+    <!-- Se define un elemento p con un id 'usuarioActual' -->
+    <p id="usuarioActual"></p>
+
+    <!-- Hasta acá -->
+
+
+    <!-- Enlace para cancelar la operación y regresar a la pantalla anterior -->
+    <a href="/tareas/espera">Cancelar</a>
+</div>
+
+<!-- Script que maneja la lógica de la espera y finalización del proceso -->
+<script src="/javascript/esperaCambioBahia.js"></script>
+

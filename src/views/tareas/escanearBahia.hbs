@@ -1,0 +1,55 @@
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/escanearBahia.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal de la pantalla de escaneo -->
+<div class="container">
+    <h1>Escanear Bahía</h1>
+    <p>Por favor, escanee la bahía donde dejará el pallet.</p><!-- Mensaje con instrucciones para el usuario -->
+
+    <!-- Campo para ingresar el código numérico -->
+    <label for="codeInput">Ingrese Código de la bahía:</label>
+    <input type="number" id="codeInput" placeholder="Escanea la bahía..." autofocus/>
+
+    <!-- Botón para confirmar el escaneo de la bahía (inicialmente deshabilitado) -->
+    <button class="submit-code-btn" id="submitCodeBtn">Confirmar Código</button>
+
+    <!-- Se define un elemento h1 con un id 'usuarioActual' que inicialmente muestra "Cargando..." -->
+    <p id="usuarioActual"></p>
+
+    <!-- Mensaje de confirmación o error tras la acción del usuario -->
+    <p id="mensaje"></p>
+
+    <!-- Enlace para regresar a la pantalla anterior -->
+    <a href="/tareas/espera">Volver</a>
+</div>
+
+<!-- Script que maneja la lógica de escaneo de bahía -->
+<script src="/javascript/escanearBahia.js" defer></script>
+

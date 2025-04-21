@@ -1,0 +1,143 @@
+/*Estilos contenedor principal de la pantalla Olvido de Contraseña*/
+.olvido-container {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--sombra-cuadro);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Estilos del título h1 y párrafo p*/
+.olvido-container h1 {
+    color: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.olvido-container p {
+    color: var(--celeste-oscuro);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/*Botón de contacto con mesa de ayuda*/
+.contact-btn {
+    background-color: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px var(--sombra-boton);
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-btn:hover {
+    background-color: var(--celeste-claro); /*CAMBIO AQUÍ*/
+    transform: scale(1.02);
+}
+
+.contact-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px var(--sombra-boton);
+}
+
+/*Enlace de regreso*/
+.back-link {
+    color: var(--celeste-oscuro);
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.back-link:hover {
+    color: var(--celeste-claro);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .olvido-container {
+        max-width: 300px;
+        padding: 30px;
+    }
+
+    .olvido-container h1 {
+        font-size: 28px;
+    }
+
+    .contact-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .olvido-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .olvido-container h1 {
+        font-size: 24px;
+    }
+
+    .contact-btn {
+        font-size: 14px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+}
+
+/*Estilo de la lista de contactos*/
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    background: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/*Estilos de los items de la lista*/
+.contact-list li {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--celeste-claro);
+    font-size: 14px;
+    color: var(--celeste-oscuro);
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+/*Estilos de los enlaces dentro de la lista*/
+.contact-list a {
+    color: var(--celeste-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}

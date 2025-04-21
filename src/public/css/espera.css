@@ -1,0 +1,145 @@
+/*Se definen variables CSS para facilitar la gestión de colores y reutilizarlos en todo el archivo*/
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+}
+
+/*Estilos generales*/
+body {
+    background: var(--fondo-celeste);
+    color: var(--celeste-oscuro);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/*Estilos del contenedor de la pantalla esperando escaneo*/
+.scan-waiting-container {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--sombra-cuadro);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Estilos de los títulos h1 y h2*/
+.scan-waiting-container h1 {
+    color: var(--celeste-oscuro);
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.scan-waiting-container h2 {
+    color: var(--celeste-oscuro);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/*Estilo mensaje de espera*/
+.waiting-message {
+    color: var(--celeste-oscuro);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/*Animación de carga*/
+.loader {
+    border: 4px solid var(--celeste-claro);
+    border-radius: 50%;
+    border-top: 4px solid var(--celeste-oscuro);
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+/*Definición de la animación*/
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Estilo del botón cancelar*/
+.cancel-btn {
+    background: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: var(--blanco); /*CAMBIO AQUÍ*/
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cancel-btn:hover {
+    background: var(--celeste-claro); /*CAMBIO AQUÍ*/
+    color: var(--blanco);
+}
+
+.cancel-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .scan-waiting-container {
+        max-width: 300px;
+        padding: 30px;
+    }
+
+    .scan-waiting-container h1 {
+        font-size: 28px;
+    }
+
+    .scan-waiting-container h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scan-waiting-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .scan-waiting-container h1 {
+        font-size: 24px;
+    }
+
+    .scan-waiting-container h2 {
+        font-size: 20px;
+    }
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+/*HASTA ACÁ*/

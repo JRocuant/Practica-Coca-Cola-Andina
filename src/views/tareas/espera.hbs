@@ -1,0 +1,53 @@
+<head>
+    <title>Esperando Escaneo - Coke Kronos</title>
+    <link rel="stylesheet" href="/css/espera.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- Estilo en línea para modificar el p con id 'usuarioActual' -->
+    <style>
+      #usuarioActual {
+        font-size: 1.5em; /* Aumenta el tamaño del texto */
+        font-weight: bold; /* Pone el texto en negrita */
+      }
+    </style>
+
+</head>
+
+<script>
+  // Se agrega un "event listener" para esperar a que el contenido del DOM se haya cargado completamente
+  document.addEventListener('DOMContentLoaded', function() {
+      // Se obtiene el objeto 'usuarioActual' del localStorage y se parsea desde JSON a un objeto JavaScript
+      const usuario = JSON.parse(localStorage.getItem('usuarioActual'));
+      
+      // Si el objeto 'usuario' existe en el localStorage (es decir, no es null ni undefined)
+      if (usuario) {
+        // Se actualiza el contenido del elemento con el id 'usuarioActual' con el nombre del usuario
+        document.getElementById('usuarioActual').textContent = usuario.name;
+      }
+  });
+</script>
+
+<!-- Contenedor principal para la pantalla de espera del escaneo -->
+<div class="scan-waiting-container">
+    <h1>Esperando Escaneo</h1>
+
+    <p id="selectedTask">Cargando...</p> <!-- Muestra la tarea seleccionada -->
+
+    <!-- Campo para ingresar el código numérico -->
+    <label for="codeInput">Ingrese Código:</label>
+    <input type="string" id="codeInput" placeholder="Código numérico" autofocus/>
+
+    <button class="submit-code-btn" id="submitCodeBtn">Confirmar Código</button>
+
+    
+
+    <div class="loader"></div> <!-- Indicador visual de carga -->
+
+    <!-- Se define un elemento p con un id 'usuarioActual' -->
+    <p id="usuarioActual"></p>
+
+    <button class="cancel-btn" id="cancelBtn">Cancelar</button> <!-- Botón para cancelar la espera del escaneo -->
+</div>
+
+<!-- Script que maneja la funcionalidad de la pantalla de espera -->
+<script src="/javascript/espera.js"></script>

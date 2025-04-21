@@ -1,0 +1,67 @@
+/*Estilos del contenedor principal*/
+.container {
+    background: var(--blanco);
+    padding: 20px;
+    max-width: 300px; /*CAMBIO AQUÍ*/
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--sombra-cuadro);
+    text-align: center;
+}
+
+/*Estilos del título h1 y párrafo p*/
+h1 {
+    color: var(--celeste-oscuro);
+    font-size: 24px;
+}
+
+p {
+    font-size: 14px; /*CAMBIO AQUÍ*/
+    color: var(--celeste-oscuro);
+    display: inline-block;
+    width: 80%; /* O un valor que obligue a la división */
+    text-align: center;
+}
+
+/*Estilos del botón confirmar*/
+button {
+    background: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 80%; /*CAMBIO AQUÍ*/
+}
+
+button:hover {
+    background: var(--celeste-claro);
+}
+
+/*NUEVO DESDE AQUÍ*/
+a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--celeste-oscuro);
+}
+/*HASTA ACÁ*/
+
+/*Estilos del mensaje de confirmación*/
+#mensaje {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: green;
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+/*HASTA ACÁ*/

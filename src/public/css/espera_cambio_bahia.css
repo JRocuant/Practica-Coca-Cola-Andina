@@ -1,0 +1,73 @@
+/* Estilo del contenedor principal */
+.container {
+    background: var(--blanco);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--sombra-cuadro);
+    text-align: center;
+}
+
+/* Estilo del título y párrafos */
+h1 {
+    color: var(--celeste-oscuro);
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    color: var(--celeste-oscuro);
+}
+
+/*ESTO ES NUEVO*/
+/* Estilo de los inputs de escaneo */
+input {
+    box-sizing: border-box; /* SE AGREGÓ ESTA LÍNEA */
+    width: 80%; /*CAMBIO AQUÍ*/
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--celeste-claro);
+    border-radius: 5px;
+    text-align: center;
+}
+    
+/* Estilo del botón continuar */
+button {
+    background: var(--celeste-oscuro); /*CAMBIO AQUÍ*/
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 80%; /*CAMBIO AQUÍ*/
+}
+/*HASTA ACÁ*/
+
+/* Efecto hover solo si el botón está habilitado */
+button:hover:enabled {
+    background: var(--celeste-claro);
+}
+
+/* Estilo del enlace para cancelar */
+a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--celeste-oscuro);
+}
+
+a:hover {
+    color: var(--celeste-claro);
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+/*HASTA ACÁ*/

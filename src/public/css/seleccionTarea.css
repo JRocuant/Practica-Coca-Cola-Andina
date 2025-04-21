@@ -1,0 +1,143 @@
+/* ===== Colores Principales ===== */
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Fondo General ===== */
+body {
+    background: var(--fondo-celeste);
+    color: var(--celeste-oscuro);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ===== Contenedor Principal de Selección de Tarea ===== */
+.task-container {
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px var(--sombra-cuadro);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.task-container:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== Títulos ===== */
+.task-container h1 {
+    color: var(--celeste-oscuro);
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.task-container h2 {
+    color: var(--celeste-oscuro);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ===== Botones de Tareas ===== */
+.task-btn {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.task-btn:hover {
+    background: #004d40;
+    transform: scale(1.03);
+}
+
+.task-btn:active {
+    transform: scale(0.97);
+    
+}
+
+/* ===== Botón de Cerrar Sesión ===== */
+.logout-btn {
+    background: var(--celeste-claro);
+    color: var(--celeste-oscuro);
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    border-color: var(--celeste-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.logout-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Alerta de Cerrar Sesión ===== */
+.alert-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+/* ===== Animación de Aparición ===== */
+.alert-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== Colores para Diferentes Mensajes ===== */
+.alert-message.success {
+    background: var(--celeste-oscuro);
+    border: 2px solid var(--celeste-claro);
+}
+
+.alert-message.error {
+    background: #e57373;
+    border: 2px solid #ef9a9a;
+}

@@ -1,0 +1,111 @@
+/*Se definen variables CSS para facilitar la gestión de colores y reutilizarlos en todo el archivo*/
+:root {
+    --fondo-celeste: #e0f7fa;
+    --celeste-oscuro: #00796b;
+    --celeste-claro: #b2dfdb;
+    --blanco: #ffffff;
+    --sombra-cuadro: rgba(0, 0, 0, 0.1);
+}
+
+/*Estilos generales*/
+body {
+    background: var(--fondo-celeste);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*Estilos del contenedor de la selección de tarea*/
+.task-container {
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px var(--sombra-cuadro);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-container:hover {
+    transform: translateY(-5px);
+}
+
+/*Estilos de los títulos h1 y h2*/
+.task-container h1 {
+    color: var(--celeste-claro);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-container h2 {
+    color: var(--celeste-oscuro);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/*Botones de selcción de tarea*/
+.task-btn {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 250px;
+    margin-bottom: 30px; /*CAMBIO AQUÍ*/
+}
+
+.task-btn:hover {
+    background: #004d40;
+    transform: scale(1.03);
+}
+
+.task-btn:active {
+    transform: scale(0.97);
+}
+
+/*Botón de cerrar sesión*/
+.logout-btn {
+    background: var(--celeste-claro);
+    color: var(--blanco); /*CAMBIO AQUÍ*/
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 250px;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: var(--celeste-oscuro);
+    color: var(--blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/*NUEVO*/
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--celeste-oscuro);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+/*HASTA ACÁ*/

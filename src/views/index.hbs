@@ -1,0 +1,72 @@
+<head>
+    <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    
+    <!-- Configura el viewport para que sea responsive en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que se muestra en la pestaña del navegador -->
+    <title>Login - Coke Kronos</title>
+    
+    <!-- Archivos CSS para los estilos generales, del login, pantalla de espera y pie de página -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/espera.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<!-- Contenedor principal del formulario de login -->
+<div class="login-container">
+    <h2>Ingrese sus Datos</h2>
+    
+    <!-- Tarjeta visual que contiene el formulario -->
+    <div class="login-card">
+
+        <!-- Formulario que se envía vía POST a la ruta /users/signin -->
+        <form id="loginForm" action="/users/signin" method="POST">
+
+            <!-- Campo para ingresar el email -->
+            <div class="input-group">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+
+            <!-- Campo para ingresar la contraseña -->
+            <div class="input-group">
+                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button class="btn btn-primary btn-block">
+                Iniciar Sesión                       
+            </button>
+
+            <!-- Enlace a la página de recuperación de contraseña -->
+            <p><a href="/users/olvido" class="forgot-password">¿Olvidaste tu contraseña?</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Función para alternar la visibilidad del menú desplegable
+    function toggleDropdown() {
+        var dropdown = document.getElementById("dropdownMenu");
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+    
+    // Cierra el menú desplegable si se hace clic fuera de él
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-btn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none";
+                }
+            }
+        }
+    }
+</script>

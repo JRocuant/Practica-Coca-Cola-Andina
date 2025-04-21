@@ -1,0 +1,38 @@
+<!--Algunas alertas, son temporales deben ser modificadas -->
+{{#if success_msg}}
+    <div class="alert">
+        {{success_msg}}
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+{{/if}}
+
+{{#if error_msg}}
+    <div class="alert">
+        {{error_msg}}
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+{{/if}}
+
+<style>
+    .alert {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #c3e6cb;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #155724;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+</style>
